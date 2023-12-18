@@ -1,24 +1,13 @@
 ---
 import { astroI18n } from "astro-i18n"
+import Main from "../../components/Main.astro"
 import Layout from '../../layouts/Layout.astro'
 
 astroI18n.locale 
 ---
 
 <Layout title="Welcome to Astro." lang={astroI18n.locale }>
-	<main>
-		<div class="grid grid-cols-3 grid-rows-5 gap-4">
-				<div class="row-span-5 bg-white text-black">Hello, im Fran. Im a web developer from Argentina. I love to learn new things and share my knowledge with others. I have experience in HTML, CSS, Javascript, React, Node, Express, MongoDB, SQL, Python, Django, Flask, Git, among others. I am currently working as a freelance developer and I am looking for new challenges.</div> 
-				
-				<div class="row-span-3">11</div>
-				<div >12</div>
-				<div class="col-start-2 row-start-4">13</div>
-				<div class="col-start-3 row-start-2">15</div>
-				<div class="col-start-3 row-start-3">16</div>
-				<div class="col-start-2 row-start-5">17</div>
-				<div class="row-span-2 col-start-3 row-start-4">18</div>
-		</div>
-	</main>
+<Main />
 </Layout>
 
 <style>
