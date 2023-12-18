@@ -1,4 +1,5 @@
 {
   "hi": "Hello",
-  "bye": "Goodbye"
+  "bye": "Goodbye",
+  "welcome": "Welcome {# name #} to Astro"
 }
