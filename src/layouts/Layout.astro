@@ -1,7 +1,7 @@
 ---
 interface Props {
-	title: string;
-	lang: string;
+  title: string;
+  lang: string;
 }
 
 const { title, lang } = Astro.props;
@@ -9,18 +9,18 @@ const { title, lang } = Astro.props;
 
 <!doctype html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<p>
-			<a href=""></a>
-		</p>
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+  </head><p>
+    <a href=""></a>
+  </p>
+  <title>{title}</title>
+
+  <body>
+    <slot />
+  </body>
 </html>
