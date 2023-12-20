@@ -3,9 +3,9 @@ import { astroI18n } from "astro-i18n"
 import Main from "../../components/Main.astro"
 import Layout from "../../layouts/Layout.astro"
 
-astroI18n.locale
+astroI18n.locale;
 ---
 
-<Layout title="Welcome to Astro." lang={astroI18n.locale }>
-	<Main />
+<Layout title="Welcome to Astro." lang={astroI18n.locale}>
+  <Main />
 </Layout>

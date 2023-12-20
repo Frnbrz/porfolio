@@ -1,19 +1,19 @@
 ---
-import { astroI18n } from "astro-i18n"
-import Main from "../../components/Main.astro"
-import Layout from '../../layouts/Layout.astro'
+import { astroI18n } from "astro-i18n";
+import Main from "../../components/Main.astro";
+import Layout from "../../layouts/Layout.astro";
 
-astroI18n.locale 
+astroI18n.locale;
 ---
 
-<Layout title="Welcome to Astro." lang={astroI18n.locale }>
-<Main />
+<Layout title="Welcome to Astro." lang={astroI18n.locale}>
+  <Main />
 </Layout>
 
 <style>
-	div{
-		background-color: #000;
-		color: #fff;
-		border: 1px solid #fff;
-	}
+  div {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+  }
 </style>
