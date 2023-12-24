@@ -1,5 +1,11 @@
 {
-  "hi": "Hello",
-  "bye": "Goodbye",
-  "welcome": "Welcome {# name #} to Astro"
+  "home": {
+    "hi": "Hello World"
+  },
+  "project": {
+  },
+  "nav": {
+    "home": "Home",
+    "project": "Projects"
+  }
 }
