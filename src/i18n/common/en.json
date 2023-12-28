@@ -1,11 +1,15 @@
 {
   "home": {
-    "hi": "Hello World"
+    "hi": "Hello World!",
+    "name": "I'm Francisco",
+    "description": "I'm a software developer based in Mexico City, I love to create and learn new things."
   },
-  "project": {
-  },
+  "project": {},
   "nav": {
     "home": "Home",
-    "project": "Projects"
+    "experience": "Experience",
+    "about": "About",
+    "project": "Projects",
+    "contact": "Contact"
   }
 }
