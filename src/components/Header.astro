@@ -1,21 +1,33 @@
 ---
-import ToggleTheme from './ToggleTheme.astro'
-import ToggleLanguage from './ToggleLanguage.astro'
-import ListItem from './ListItem.astro'
-import { t } from "astro-i18n"
+import { t } from "astro-i18n";
+import ListItem from "./ListItem.astro";
+import ToggleLanguage from "./ToggleLanguage.astro";
+import ToggleTheme from "./ToggleTheme.astro";
 ---
+
 <header>
   <nav>
- <ul class="flex items-center justify-end">
-  <ListItem href="/" text={t('nav.home')} />
-  <ListItem href="project" text={t('nav.project')} />
-  </li>
-  <li class="mr-3">
-    <ToggleTheme />
-  </li>
-  <li class="mr-3">
-    <ToggleLanguage />
-  </li>
-</ul>
+    <ul
+      class="mt-4 flex flex-col content-center justify-center rounded-lg border-gray-100 p-4 text-lg font-medium md:flex-row md:space-x-8 md:p-0 md:text-base rtl:space-x-reverse"
+    >
+      <ListItem href="#top">
+        {t("nav.home")}
+      </ListItem>
+      <ListItem href="#experience">
+        {t("nav.experience")}
+      </ListItem>
+      <ListItem href="#project">
+        {t("nav.project")}
+      </ListItem>
+      <ListItem href="#about">
+        {t("nav.about")}
+      </ListItem>
+      <ListItem>
+        <ToggleTheme />
+      </ListItem>
+      <ListItem>
+        <ToggleLanguage />
+      </ListItem>
+    </ul>
   </nav>
 </header>
