@@ -1,28 +1,27 @@
-<button class='language-button' aria-label='Dark Mode Toggle'>
+<button class='language-button block py-2 px-3' aria-label='Dark Mode Toggle'>
   <span>ES</span>
-</button> 
+</button>
 
 <script>
-  const languageButton = document.querySelector(
-    '.language-button',
-  ) as HTMLButtonElement;
-  languageButton.addEventListener('click', () => toggleLanguage());
+  const languageButton = document.querySelector('.language-button')
+  languageButton.addEventListener('click', () => toggleLanguage())
 
   function toggleLanguage() {
     if (
-      localStorage.language === 'es' ||  (!('theme' in localStorage) && window.location.pathname.includes('/es/'))
+      localStorage.language === 'es' ||
+      (!('theme' in localStorage) && window.location.pathname.includes('/es/'))
     ) {
-      window.location.assign('/en/', '/es/');
-      localStorage.language = 'en';
+      window.location.assign('/en/', '/es/')
+      localStorage.language = 'en'
       languageButton.innerHTML = `
        <span>ES</span>
-`;
+`
     } else {
-      window.location.assign('/es/', '/en/');
-      localStorage.language = 'es';
+      window.location.assign('/es/', '/en/')
+      localStorage.language = 'es'
       languageButton.innerHTML = ` 
        <span>EN</span>
-`;
+`
     }
   }
 </script>
