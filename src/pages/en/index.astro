@@ -1,11 +1,12 @@
 ---
 import { astroI18n } from "astro-i18n";
 import Layout from "../../layouts/Layout.astro"
+import Hero from "../../components/Hero.astro"
 
 
 astroI18n.locale;
 ---
 
-<Layout title="Welcome to Astro." lang={astroI18n.locale}>
-  
+<Layout title="Francisco Briz" lang={astroI18n.locale}>
+  <Hero />
 </Layout>
