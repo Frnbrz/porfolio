@@ -1,8 +1,10 @@
 ---
-import { t } from "astro-i18n";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import ListItem from "./ListItem.astro";
 import ToggleLanguage from "./ToggleLanguage.astro";
 import ToggleTheme from "./ToggleTheme.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header>
