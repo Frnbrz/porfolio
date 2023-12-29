@@ -1,0 +1,45 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Section from "../layouts/Section.astro";
+import ProjectsItem from "./ProjectsItem.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Section title={t("home.projects")} id="project">
+  <ProjectsItem
+    title="PortFolio"
+    description="Web PortFolio built with Astro added with i18n support and dark mode."
+    href="https://github.com/Frnbrz/porfolio"
+    tags={["Astro", "I18n", "Tailwindcss", "Typescript"]}
+  />
+
+  <ProjectsItem
+    title="Blog"
+    description="Monorepo with api and web app"
+    href="https://github.com/Frnbrz/Hito1_2t_front"
+    tags={[
+      "Nesjt",
+      "Typescript",
+      "React",
+      "Passport",
+      "Prostgress",
+      "Turborepo",
+      "Typeorm",
+      "Vite",
+    ]}
+  />
+
+  <ProjectsItem
+    title="Llamadas App"
+    description="App to manage calls"
+    href="https://github.com/Frnbrz/hito_llamadasApp"
+    tags={["Java", "Mysql", "Spring boot", "Lombok", "Maven", "JPA", "React"]}
+  />
+  <ProjectsItem
+    title="DuBo Martial Arts"
+    description="Web app for a martial arts school"
+    href="https://github.com/Frnbrz/hito_1er_trimestre"
+    tags={["Nodejs", "Express", "Jwt", "Json", "Bootstrap", "Api-rest"]}
+  />
+</Section>
