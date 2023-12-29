@@ -8,11 +8,11 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section>
+<section class="py-8 sm:py-6 md:py-16 lg:py-48 xl:gap-0 xl:py-56" id="top">
   <div
-    class="mx-auto grid max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-5 lg:py-36 xl:gap-0"
+    class="mx-auto flex justify-between py-28 align-middle lg:flex-row lg:gap-5 lg:py-16 xl:gap-0"
   >
-    <div class="mr-auto place-self-center lg:col-span-7">
+    <div class="lg:col-span-7">
       <h1
         class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white"
       >
@@ -45,11 +45,18 @@ const t = useTranslations(lang);
     <div
       class="mt-8 flex flex-wrap items-center justify-center text-gray-500 sm:justify-between"
     >
-      <HeroIcon href="https://www.linkedin.com/in/frnbrz/">
+      <HeroIcon
+        href="https://www.linkedin.com/in/frnbrz/"
+        ariaLabel="Link to Linkedin"
+      >
         <Linkdln />
       </HeroIcon>
-      <HeroIcon href="https://github.com/Frnbrz"><Github /></HeroIcon>
-      <HeroIcon href="mailto:frnbrz@gmail.com"><Gmail /></HeroIcon>
+      <HeroIcon href="https://github.com/Frnbrz" ariaLabel="Link to Github">
+        <Github />
+      </HeroIcon>
+      <HeroIcon href="mailto:frnbrz@gmail.com" ariaLabel="mailto my mail">
+        <Gmail />
+      </HeroIcon>
     </div>
   </div>
 </section>
