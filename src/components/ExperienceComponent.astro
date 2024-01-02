@@ -4,9 +4,10 @@ import Dot from "../icons/Dot.astro";
 interface Props {
   title: string;
   description: string;
+  badge?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, badge } = Astro.props;
 ---
 
 <li class="mb-20 ms-6">
@@ -17,6 +18,13 @@ const { title, description } = Astro.props;
   </span>
   <h3 class="font-medium leading-tight">
     {title}
+    {
+      badge && (
+        <span class="ml-2 inline-flex items-center justify-center rounded-full bg-blue-500 px-2 py-1 text-xs font-bold leading-none text-white">
+          {badge}
+        </span>
+      )
+    }
   </h3>
   <p class="text-sm">
     {description}
