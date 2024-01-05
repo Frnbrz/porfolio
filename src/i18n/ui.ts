@@ -21,6 +21,14 @@ export const ui = {
     'nav.experience': 'Experience',
     'nav.project': 'Projects',
     'nav.contact': 'Contact',
+    'project.duBo.title': 'DuBo Martial Arts',
+    'project.duBo.description': 'Web app for a martial arts school',
+    'project.calls.title': 'Calls App',
+    'project.calls.description': 'App to manage calls',
+    'project.blog.title': 'Blog',
+    'project.blog.description': 'Monorepo with api and web app',
+    'project.portfolio.title': 'PortFolio',
+    'project.portfolio.description': 'Web PortFolio built with Astro added with i18n support and dark mode.',
 
   },
   es: {
@@ -38,6 +46,14 @@ export const ui = {
     'nav.experience': 'Experiencia',
     'nav.project': 'Proyectos',
     'nav.contact': 'Contacto',
+    'project.duBo.title': 'DuBo Martial Arts',
+    'project.duBo.description': 'Aplicación web para una escuela de artes marciales',
+    'project.calls.title': 'Llamadas App',
+    'project.calls.description': 'App para gestionar llamadas',
+    'project.blog.title': 'Blog',
+    'project.blog.description': 'Monorepo con api y app web',
+    'project.portfolio.title': 'PortFolio',
+    'project.portfolio.description': 'PortFolio web construido con Astro agregado con soporte i18n y modo oscuro.',
   },
 } as const
 
