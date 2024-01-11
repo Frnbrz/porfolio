@@ -17,92 +17,93 @@ import Header from "../components/Header.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <title>Francisco Briz</title>
-    <meta name="title" content="Francisco Briz" />
+    <!-- Primary Meta Tags -->
+    <title>Portfolio - Francisco Briz</title>
+    <meta name="title" content="Portfolio - Francisco Briz" />
     <meta
       name="description"
-      content="Portfolio with experience and projects from Francisco, web developer "
+      content="Portfolio with experience and projects from Francisco, web developer"
     />
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-frnbrz.vercel.app" />
-    <meta property="og:title" content="Francisco Briz" />
+    <meta property="og:url" content="https://portfolio-frnbrz.vercel.app/" />
+    <meta property="og:title" content="Portfolio - Francisco Briz" />
     <meta
       property="og:description"
-      content="Portfolio with experience and projects from Francisco, web developer "
+      content="Portfolio with experience and projects from Francisco, web developer"
     />
     <meta property="og:image" content="/pre.png" />
 
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta
       property="twitter:url"
-      content="https://portfolio-frnbrz.vercel.app"
+      content="https://portfolio-frnbrz.vercel.app/"
     />
-    <meta property="twitter:title" content="Francisco Briz" />
+    <meta property="twitter:title" content="Portfolio - Francisco Briz" />
     <meta
       property="twitter:description"
       content="Portfolio with experience and projects from Francisco, web developer"
     />
     <meta property="twitter:image" content="/pre.png" />
-  </head>
 
-  <body class="m-0 p-0">
-    <head
-      ><div
-        class="absolute top-0 w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-      >
-        <main class="m-auto w-3/4 sm:w-3/4 md:w-4/6 xl:w-2/4">
-          <Header />
-          <slot />
-        </main>
-      </div>
-
-      <script>
-        if (
-          localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-          localStorage.theme = "dark";
-          document.querySelector(".light-mode-icon").classList.remove("hidden");
-          document.querySelector(".dark-mode-icon").classList.add("hidden");
-        } else {
-          document.documentElement.classList.remove("dark");
-          localStorage.theme = "light";
-          document.querySelector(".dark-mode-icon").classList.remove("hidden");
-          document.querySelector(".light-mode-icon").classList.add("hidden");
-        }
-
-        if (localStorage.language === "en") {
-          document.documentElement.lang = "en";
-          localStorage.language = "en";
-          document.querySelector(".language-button").innerHTML = "ES";
-        } else {
-          document.documentElement.lang = "es";
-          localStorage.language = "es";
-          document.querySelector(".language-button").innerHTML = "EN";
-        }
-      </script>
-
-      <style is:global>
-        /* lato-regular - latin */
-        @font-face {
-          font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-          font-family: "Lato";
-          font-style: normal;
-          font-weight: 400;
-          src: url("/fonts/lato-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-        }
-        /* lato-700 - latin */
-        @font-face {
-          font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-          font-family: "Lato";
-          font-style: normal;
-          font-weight: 700;
-          src: url("/fonts/lato-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-        }
-      </style>
-    </head>
+    <!-- Meta Tags Generated with https://metatags.io -->
+  </head><body class="m-0 p-0">
+    <div
+      class="absolute top-0 w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+      <main class="m-auto w-3/4 sm:w-3/4 md:w-4/6 xl:w-2/4">
+        <Header />
+        <slot />
+      </main>
+    </div>
   </body>
+
+  <script>
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+      document.querySelector(".light-mode-icon").classList.remove("hidden");
+      document.querySelector(".dark-mode-icon").classList.add("hidden");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+      document.querySelector(".dark-mode-icon").classList.remove("hidden");
+      document.querySelector(".light-mode-icon").classList.add("hidden");
+    }
+
+    if (localStorage.language === "en") {
+      document.documentElement.lang = "en";
+      localStorage.language = "en";
+      document.querySelector(".language-button").innerHTML = "ES";
+    } else {
+      document.documentElement.lang = "es";
+      localStorage.language = "es";
+      document.querySelector(".language-button").innerHTML = "EN";
+    }
+  </script>
+
+  <style is:global>
+    /* lato-regular - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 400;
+      src: url("/fonts/lato-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* lato-700 - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 700;
+      src: url("/fonts/lato-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+  </style>
 </html>
