@@ -1,45 +1,52 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import Section from "../layouts/Section.astro";
-import ProjectsItem from "./ProjectsItem.astro";
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import Section from '../layouts/Section.astro'
+import ProjectsItem from './ProjectsItem.astro'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const PROYECTS = [
+  {
+    name: 'magicwater',
+    href: 'https://github.com/Frnbrz/hito-servidor-segundo',
+    tags: ['Java', 'Spring boot', 'Mysql', 'Lombok', 'Maven', 'JPA', 'React'],
+  },
+  {
+    name: 'blog',
+    href: 'https://github.com/Frnbrz/Hito1_2t_front',
+    tags: [
+      'Nesjt',
+      'Typescript',
+      'React',
+      'Passport',
+      'Prostgress',
+      'Turborepo',
+      'Typeorm',
+      'Vite',
+    ],
+  },
+  {
+    name: 'calls',
+    href: 'https://github.com/Frnbrz/hito_llamadasApp',
+    tags: ['Java', 'Mysql', 'Spring boot', 'Lombok', 'Maven', 'JPA', 'React'],
+  },
+  {
+    name: 'duBo',
+    href: 'https://github.com/Frnbrz/hito_1er_trimestre',
+    tags: ['Nodejs', 'Express', 'Jwt', 'Json', 'Bootstrap', 'Api-rest'],
+  },
+]
 ---
 
-<Section title={t("home.projects")} id="project">
-  <ProjectsItem
-    title={t("project.portfolio.title")}
-    description={t("project.portfolio.description")}
-    href="https://github.com/Frnbrz/porfolio"
-    tags={["Astro", "I18n", "Tailwindcss", "Typescript"]}
-  />
-
-  <ProjectsItem
-    title={t("project.blog.title")}
-    description={t("project.blog.description")}
-    href="https://github.com/Frnbrz/Hito1_2t_front"
-    tags={[
-      "Nesjt",
-      "Typescript",
-      "React",
-      "Passport",
-      "Prostgress",
-      "Turborepo",
-      "Typeorm",
-      "Vite",
-    ]}
-  />
-
-  <ProjectsItem
-    title={t("project.calls.title")}
-    description={t("project.calls.description")}
-    href="https://github.com/Frnbrz/hito_llamadasApp"
-    tags={["Java", "Mysql", "Spring boot", "Lombok", "Maven", "JPA", "React"]}
-  />
-  <ProjectsItem
-    title={t("project.duBo.title")}
-    description={t("project.duBo.description")}
-    href="https://github.com/Frnbrz/hito_1er_trimestre"
-    tags={["Nodejs", "Express", "Jwt", "Json", "Bootstrap", "Api-rest"]}
-  />
+<Section title={t('home.projects')} id='project'>
+  {
+    PROYECTS.map(project => (
+      <ProjectsItem
+        title={t(`project.${project.name}.title`)}
+        description={t(`project.${project?.name}.description`)}
+        href={project.href}
+        tags={project.tags}
+      />
+    ))
+  }
 </Section>
