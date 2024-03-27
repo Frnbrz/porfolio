@@ -1,23 +1,24 @@
 ---
 interface Props {
-  href?: string;
-  ariaLabel?: string;
+  href?: string
+  ariaLabel?: string
 }
 
-const { href, ariaLabel } = Astro.props;
+const { href, ariaLabel } = Astro.props
 ---
 
 {
   href ? (
     <a
       href={href}
-      aria-label={ariaLabel}
-      class="me-2 inline-flex items-center rounded-lg border border-blue-400 p-2.5 text-center text-sm font-medium text-blue-400 hover:bg-blue-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800"
+      aria-label={ariaLabel || 'Link'}
+      rel='noopener noreferrer'
+      class='me-2 inline-flex items-center rounded-lg border border-blue-400 p-2.5 text-center text-sm font-medium text-blue-400 hover:bg-blue-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
     >
-      <slot />
+      <slot>Link</slot>
     </a>
   ) : (
-    <span class="h-11 w-11 transition duration-300 ease-in-out md:h-12 md:w-12 lg:h-14 lg:w-14">
+    <span class='h-11 w-11 transition duration-300 ease-in-out md:h-12 md:w-12 lg:h-14 lg:w-14'>
       <slot />
     </span>
   )
