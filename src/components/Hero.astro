@@ -1,60 +1,60 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import Github from "../icons/Github.astro";
-import Gmail from "../icons/Gmail.astro";
-import Linkdln from "../icons/Linkedin.astro";
-import HeroIcon from "./HeroIcon.astro";
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import Github from '../icons/Github.astro'
+import Gmail from '../icons/Gmail.astro'
+import Linkdln from '../icons/Linkedin.astro'
+import HeroIcon from './HeroIcon.astro'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<section class="py-8 sm:py-6 md:py-16 lg:py-48 xl:gap-0 xl:py-56" id="top">
+<section class='py-8 sm:py-6 md:py-16 lg:py-48 xl:gap-0 xl:py-16' id='top'>
   <div
-    class="mx-auto flex justify-between py-28 align-middle lg:flex-row lg:gap-5 lg:py-16 xl:gap-0"
+    class='mx-auto flex justify-between py-28 align-middle lg:flex-row lg:gap-5 lg:py-16 xl:gap-0'
   >
-    <div class="lg:col-span-7">
+    <div class='lg:col-span-7'>
       <h1
-        class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white"
+        class='mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl'
       >
         <span
-          class="bg-gradient-to-tr from-blue-600 to-cyan-500 bg-clip-text text-transparent"
+          class='bg-gradient-to-tr from-blue-600 to-cyan-500 bg-clip-text text-transparent'
         >
-          {t("home.hi")}
+          {t('home.hi')}
         </span>
-        <span class="block text-gray-900 dark:text-gray-100">
-          {t("home.name")}
+        <span class='block text-gray-800 dark:text-gray-100'>
+          {t('home.name')}
         </span>
       </h1>
       <p
-        class="mb-6 max-w-2xl font-light text-gray-600 md:text-lg lg:mb-8 lg:text-2xl xl:text-4xl dark:text-gray-400"
+        class='mb-6 max-w-2xl font-light text-gray-800 dark:text-gray-100 md:text-lg lg:mb-8 lg:text-2xl xl:text-4xl'
       >
-        {t("home.description")}
+        {t('home.description')}
       </p>
     </div>
-    <div class="hidden lg:col-span-5 lg:mt-0 lg:flex">
+    <div class='hidden lg:col-span-5 lg:mt-0 lg:flex'>
       <img
-        src="/avatar.jpg"
-        alt="avatar of frnbrz"
-        class="h-20 w-20 rounded-3xl drop-shadow-xl filter lg:h-64 lg:w-64"
+        src='/avatar.jpg'
+        alt='avatar of frnbrz'
+        class='h-20 w-20 rounded-3xl drop-shadow-xl filter lg:h-64 lg:w-64'
       />
     </div>
   </div>
   <div
-    class="mx-auto px-4 text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36"
+    class='mx-auto px-4 text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36'
   >
     <div
-      class="mt-8 flex flex-wrap items-center justify-center text-gray-500 sm:justify-between"
+      class='mt-8 flex flex-wrap items-center justify-center sm:justify-between'
     >
       <HeroIcon
-        href="https://www.linkedin.com/in/frnbrz/"
-        ariaLabel="Link to Linkedin"
+        href='https://www.linkedin.com/in/frnbrz/'
+        ariaLabel='Link to Linkedin'
       >
         <Linkdln />
       </HeroIcon>
-      <HeroIcon href="https://github.com/Frnbrz" ariaLabel="Link to Github">
+      <HeroIcon href='https://github.com/Frnbrz' ariaLabel='Link to Github'>
         <Github />
       </HeroIcon>
-      <HeroIcon href="mailto:frnbrz@gmail.com" ariaLabel="mailto my mail">
+      <HeroIcon href='mailto:frnbrz@gmail.com' ariaLabel='mailto my mail'>
         <Gmail />
       </HeroIcon>
     </div>
