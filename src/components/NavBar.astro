@@ -1,0 +1,38 @@
+---
+import { Astronav, MenuIcon, MenuItems } from 'astro-navbar'
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import ListItem from './ListItem.astro'
+import ToggleLanguage from './ToggleLanguage.astro'
+import ToggleTheme from './ToggleTheme.astro'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<header class='container mx-auto justify-between gap-5 p-5 lg:flex'>
+  <Astronav closeOnClick>
+    <div class='flex w-full justify-between lg:w-auto'>
+      <div class='block lg:hidden'>
+        <MenuIcon class='h-4 w-4 text-white' />
+      </div>
+    </div>
+    <MenuItems class='hidden lg:flex'>
+      <ul class='flex flex-col items-center lg:flex-row lg:gap-5'>
+        <ListItem href='#top'>
+          {t('nav.home')}
+        </ListItem>
+        <ListItem href='#experience'>
+          {t('nav.experience')}
+        </ListItem>
+        <ListItem href='#project'>
+          {t('nav.project')}
+        </ListItem>
+        <ListItem>
+          <ToggleTheme />
+        </ListItem>
+        <ListItem>
+          <ToggleLanguage />
+        </ListItem>
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>
