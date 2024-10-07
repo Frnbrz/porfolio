@@ -1,25 +1,25 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import ListItem from "./ListItem.astro";
-import ToggleLanguage from "./ToggleLanguage.astro";
-import ToggleTheme from "./ToggleTheme.astro";
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import ListItem from './ListItem.astro'
+import ToggleLanguage from './ToggleLanguage.astro'
+import ToggleTheme from './ToggleTheme.astro'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <header>
   <nav>
     <ul
-      class="mt-4 flex flex-col content-center justify-center rounded-lg border-gray-100 py-12 text-lg font-medium md:flex-row md:space-x-8 md:p-0 md:text-base rtl:space-x-reverse"
+      class='mt-4 flex flex-col content-center justify-center rounded-lg border-gray-100 py-12 text-lg font-medium md:flex-row md:space-x-8 md:p-0 md:text-base rtl:space-x-reverse'
     >
-      <ListItem href="#top">
-        {t("nav.home")}
+      <ListItem href='#top'>
+        {t('nav.home')}
       </ListItem>
-      <ListItem href="#experience">
-        {t("nav.experience")}
+      <ListItem href='#experience'>
+        {t('nav.experience')}
       </ListItem>
-      <ListItem href="#project">
-        {t("nav.project")}
+      <ListItem href='#project'>
+        {t('nav.project')}
       </ListItem>
       <!-- <ListItem href="#about">
         {t("nav.about")}
