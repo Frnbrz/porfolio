@@ -1,21 +1,21 @@
 ---
 interface Props {
-  title: string;
-  id: string;
+  title: string
+  id: string
 }
 
-const { title, id } = Astro.props;
+const { title, id } = Astro.props
 ---
 
 <section>
   <h2
     id={id}
-    class="xl:text-1xl md:text-1xl mb-4 max-w-xl px-2 py-8 text-5xl font-extrabold leading-none tracking-tight dark:text-white"
+    class='xl:text-1xl md:text-1xl mb-4 max-w-xl px-2 py-8 text-5xl font-extrabold leading-none tracking-tight dark:text-white'
   >
     {title}
   </h2>
   <div
-    class="2xl:max-w-screen-full xl:grid-cols-25 mx-auto grid gap-3 px-4 py-8 max-2xl:max-w-full md:gap-1 md:py-5 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:max-w-screen-xl xl:gap-3"
+    class='2xl:max-w-screen-full xl:grid-cols-25 mx-auto grid justify-between gap-3 px-4 py-8 max-2xl:max-w-full md:gap-1 md:py-5 lg:grid-cols-10 lg:gap-8 lg:py-16 xl:max-w-screen-xl xl:gap-10'
   >
     <slot />
   </div>
