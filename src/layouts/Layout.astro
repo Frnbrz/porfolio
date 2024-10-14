@@ -3,9 +3,7 @@ interface Props {
   title: string
 }
 
-import { getLangFromUrl } from '../i18n/utils'
-
-const { title } = Astro.props
+const { title = '' } = Astro.props
 import NavBar from '../components/NavBar.astro'
 const { currentLocale } = Astro
 ---
@@ -77,16 +75,6 @@ const { currentLocale } = Astro
       localStorage.theme = 'light'
       document.querySelector('.dark-mode-icon').classList.remove('hidden')
       document.querySelector('.light-mode-icon').classList.add('hidden')
-    }
-
-    if (localStorage.language === 'en') {
-      document.documentElement.lang = 'en'
-      localStorage.language = 'en'
-      document.querySelector('.language-button').innerHTML = 'ES'
-    } else {
-      document.documentElement.lang = 'es'
-      localStorage.language = 'es'
-      document.querySelector('.language-button').innerHTML = 'EN'
     }
   </script>
 
