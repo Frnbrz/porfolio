@@ -1,11 +1,13 @@
 ---
 interface Props {
   title: string
-  lang: string
 }
 
-const { title, lang } = Astro.props
-import Header from '../components/Header.astro'
+import { getLangFromUrl } from '../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+
+const { title } = Astro.props
 import NavBar from '../components/NavBar.astro'
 ---
 
