@@ -76,6 +76,21 @@ const { currentLocale } = Astro
       document.querySelector('.dark-mode-icon').classList.remove('hidden')
       document.querySelector('.light-mode-icon').classList.add('hidden')
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const languageButton = document.querySelector('.language-button')
+      if (languageButton) {
+        if (localStorage.language === 'en') {
+          document.documentElement.lang = 'en'
+          localStorage.language = 'en'
+          languageButton.innerHTML = 'ES'
+        } else {
+          document.documentElement.lang = 'es'
+          localStorage.language = 'es'
+          languageButton.innerHTML = 'EN'
+        }
+      }
+    })
   </script>
 
   <style is:global>
