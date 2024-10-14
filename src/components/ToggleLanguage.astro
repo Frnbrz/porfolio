@@ -1,31 +1,19 @@
-<div class='block w-max'>
-  <button
-    aria-label='Change language'
-    class='language-button m-0 p-0 text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:text-blue-600 md:dark:hover:bg-transparent md:dark:hover:text-blue-500'
-  >
-    <span>EN</span>
-  </button>
-</div>
-<script>
-  const languageButton = document.querySelector('.language-button')
-  languageButton.addEventListener('click', () => toggleLanguage())
+---
+import { languages } from '../i18n/ui'
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+} from '../i18n/utils'
 
-  function toggleLanguage() {
-    if (
-      localStorage.language === 'es' ||
-      (!('theme' in localStorage) && window.location.pathname.includes('/es/'))
-    ) {
-      window.location.assign('/en/')
-      localStorage.language = 'en'
-      languageButton.innerHTML = `
-       <span>ES</span>
-`
-    } else {
-      window.location.assign('/es/')
-      localStorage.language = 'es'
-      languageButton.innerHTML = ` 
-       <span>EN</span>
-`
-    }
-  }
-</script>
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+---
+
+{
+  Object.entries(languages).map(([langPrefix]) => {     
+    if (langPrefix == lang) return <></>
+    return (<a class="text-gray-800 dark:text-gray-700" href={translatePath("/", langPrefix)}>{langPrefix.toUpperCase()}</a>)
+  })
+
+}
