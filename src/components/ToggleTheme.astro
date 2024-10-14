@@ -1,36 +1,49 @@
 ---
-import Dark from "../icons/Dark.astro";
-import Light from "../icons/Light.astro";
+import Dark from '../icons/Dark.astro'
+import Light from '../icons/Light.astro'
 ---
 
-<button class="dark-mode-button block px-3 py-2" aria-label="Dark Mode Toggle">
-  <span class="dark-mode-icon hidden">
+<button class='dark-mode-button block px-3 py-2' aria-label='Dark Mode Toggle'>
+  <span class='dark-mode-icon hidden'>
     <Dark />
   </span>
-  <span class="light-mode-icon hidden">
+  <span class='light-mode-icon hidden'>
     <Light />
   </span>
 </button>
 
 <script>
-  const darkModeButton = document.querySelector(".dark-mode-button");
-  darkModeButton.addEventListener("click", () => toggleDarkMode());
+  document.addEventListener('DOMContentLoaded', () => {
+    const darkModeButton = document.querySelector('.dark-mode-button')
+    const darkModeIcon = document.querySelector('.dark-mode-icon')
+    const lightModeIcon = document.querySelector('.light-mode-icon')
 
-  function toggleDarkMode() {
+    // Initialize the theme based on localStorage
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-      document.querySelector(".dark-mode-icon").classList.remove("hidden");
-      document.querySelector(".light-mode-icon").classList.add("hidden");
+      document.documentElement.classList.add('dark')
+      lightModeIcon.classList.remove('hidden')
     } else {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-      document.querySelector(".light-mode-icon").classList.remove("hidden");
-      document.querySelector(".dark-mode-icon").classList.add("hidden");
+      darkModeIcon.classList.remove('hidden')
     }
-  }
+
+    darkModeButton.addEventListener('click', () => toggleDarkMode())
+
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark')
+        localStorage.theme = 'light'
+        darkModeIcon.classList.remove('hidden')
+        lightModeIcon.classList.add('hidden')
+      } else {
+        document.documentElement.classList.add('dark')
+        localStorage.theme = 'dark'
+        lightModeIcon.classList.remove('hidden')
+        darkModeIcon.classList.add('hidden')
+      }
+    }
+  })
 </script>
