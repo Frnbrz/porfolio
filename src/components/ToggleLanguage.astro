@@ -13,7 +13,7 @@ const translatePath = useTranslatedPath(lang);
 {
   Object.entries(languages).map(([langPrefix]) => {     
     if (langPrefix == lang) return <></>
-    return (<a class="text-gray-800 dark:text-gray-700" href={translatePath("/", langPrefix)}>{langPrefix.toUpperCase()}</a>)
+    return (<a class="text-gray-800 dark:text-gray-100" href={translatePath("/", langPrefix)}>{langPrefix.toUpperCase()}</a>)
   })
 
 }
