@@ -5,6 +5,7 @@ interface Props {
 
 const { title = '' } = Astro.props
 import NavBar from '../components/NavBar.astro'
+import BackToTop from '../components/BackToTop.astro'
 const { currentLocale } = Astro
 ---
 
@@ -58,6 +59,7 @@ const { currentLocale } = Astro
         <slot />
       </main>
     </div>
+    <BackToTop />
   </body>
 
   <script>
