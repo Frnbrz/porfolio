@@ -2,9 +2,10 @@
 interface Props {
   href?: string
   ariaLabel?: string
+  isDownload?: boolean
 }
 
-const { href, ariaLabel } = Astro.props
+const { href, ariaLabel, isDownload = false } = Astro.props
 ---
 
 {
@@ -14,6 +15,7 @@ const { href, ariaLabel } = Astro.props
       aria-label={ariaLabel || 'Link'}
       rel='noopener noreferrer'
       class='me-2 inline-flex items-center rounded-lg border border-blue-400 p-2.5 text-center text-sm font-medium text-blue-400 hover:bg-blue-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800'
+      {...(isDownload ? { download: '' } : {})}
     >
       <slot>Link</slot>
     </a>
