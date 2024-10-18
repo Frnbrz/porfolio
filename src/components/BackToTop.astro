@@ -1,0 +1,56 @@
+---
+
+---
+
+<button
+  id='backToTop'
+  class='fixed bottom-10 right-10 hidden rounded-full bg-blue-500 p-3 text-white opacity-0 transition-opacity duration-300'
+>
+  <!-- Icono de flecha hacia arriba -->
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    class='h-6 w-6'
+    fill='none'
+    viewBox='0 0 24 24'
+    stroke='currentColor'
+  >
+    <path
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='2'
+      d='M5 10l7-7m0 0l7 7m-7-7v18'></path>
+  </svg>
+</button>
+
+<script>
+  const backToTopButton = document.getElementById('backToTop')
+  let isVisible = false
+
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY
+    const triggerPosition = 300 // Se puede ajustar la posición donde aparece el botón
+
+    if (scrollPosition > triggerPosition) {
+      if (!isVisible) {
+        backToTopButton.classList.remove('hidden')
+        setTimeout(() => {
+          backToTopButton.classList.remove('opacity-0')
+        }, 10) // Le damos un breve retardo para la transición suave
+        isVisible = true
+      }
+    } else {
+      if (isVisible) {
+        backToTopButton.classList.add('opacity-0')
+        setTimeout(() => {
+          backToTopButton.classList.add('hidden')
+        }, 300) // Esperamos el tiempo de la transición antes de ocultar
+        isVisible = false
+      }
+    }
+  })
+
+  // Lógica para hacer scroll hacia arriba
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+</script>
